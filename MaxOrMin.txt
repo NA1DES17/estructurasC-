@@ -1,0 +1,12 @@
+Entre max y min la diferencia(filtHacArri) está en 
+'if(datos[indicePadre].CompareTo(datos[index]) > 0)'
+donde min tiene > 0
+y max tiene < 0
+
+
+Entre max y min la diferencia(filtHacAbaj) está en
+'if (indiceHijoIzq <= cantElem && datos[indiceHijoIzq].CompareTo(datos[menorIndice]) < 0)'
+y
+'if (indiceHijoDer <= cantElem && datos[indiceHijoDer].CompareTo(datos[menorIndice]) < 0)'
+donde min tiene < 0
+y max tiene > 0
