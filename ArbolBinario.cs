@@ -18,9 +18,17 @@ public class ArbolBinario<T>
   {
     return this.hijoIzquierdo;
   }
+  public void setHijoIzquierdo(ArbolBinario<T> hijoIzquierdo)
+  {
+    this.hijoIzquierdo = hijoIzquierdo;
+  }
   public ArbolBinario<T> getHijoDerecho()
   {
     return this.hijoDerecho;
+  }
+  public void setHijoDerecho(ArbolBinario<T> hijoDerecho)
+  {
+    this.hijoDerecho = hijoDerecho;
   }
   public void agregarHijoIzquierdo(ArbolBinario<T> hijo)
   {
@@ -40,7 +48,7 @@ public class ArbolBinario<T>
   }
   public bool esHoja()
   {
-    return this.hijoIzquierdo == null && this.agregarHijoDerecho == null;
+    return this.hijoIzquierdo == null && this.hijoDerecho == null;
   }
 
   //-------------------
@@ -184,4 +192,26 @@ public class ArbolBinario<T>
     return incluye(nodo.getHijoIzquierdo(), elemento) || incluye(nodo.getHijoDerecho(), elemento);
   }
   //----
+
+// public ArbolBinario<int> nuevo(ArbolBinario<int> arbol){
+//     //Creamos el nuevo árbol con el mismo valor de la raíz del árbol original
+//     ArbolBinario<int> nuevoArbol = new ArbolBinario<int>(arbol.getDatoRaiz());
+
+//     //Si el árbol original tiene un HI, crear un nuevo HI
+//     if (arbol.getHijoIzquierdo() != null) {
+
+//       ArbolBinario<int> nuevoHI = new ArbolBinario<int>(arbol.getDatoRaiz() + arbol.getHijoIzquierdo().getDatoRaiz());
+//       nuevoArbol.agregarHijoIzquierdo(nuevoHI);
+//     }
+//     // El hijo derecho del nuevo árbol es una copia directa del hijo derecho del árbol original
+//     /*if (arbol.getHijoDerecho() != null)
+//     {
+//       ArbolBinario<int> nuevoHD = nuevo(arbol.getHijoDerecho()); // Llamada recursiva
+//       nuevoArbol.agregarHijoDerecho(nuevoHD);
+//     }*/
+//     return nuevoArbol;
+//   }
+    // public ArbolBinario<int> nuevo(ArbolBinario<int> arbol){
+
+    //   }
 }

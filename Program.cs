@@ -72,14 +72,16 @@ class Program
       hijo2.agregarHijoDerecho(hijo5);
 
       ArbolBinario<int> hijo6 = new ArbolBinario<int>(7);
-      hijo3.agregarHijoIzquierdo(hijo6);
+      hijo4.agregarHijoIzquierdo(hijo6);
 
       // Crear un nuevo árbol basado en el árbol original
       //ArbolBinario<int> nuevoArbol = miArbol.nuevo(miArbol);
 
       // Mostrar el recorrido por niveles del nuevo árbol
-      //Console.WriteLine("Recorrido por niveles del nuevo árbol:");
-      //nuevoArbol.recorridoPorNiveles(); // Debería imprimir: 1 3 3 6 8 6 12
+      Console.WriteLine("\nRecorrido preorden del árbol original:");
+      miArbol.preorden();
+
+      
     }
 
     static void pruebaHeap()
@@ -194,7 +196,10 @@ class Program
     //pruebaHeap();
     //PracticaUno();
     //PracticaDos();
-
+    
   }
 
+
+
+    
 }
