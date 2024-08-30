@@ -1,24 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Dropbox\\Programacion\\CT\\estructuras\\estructuras.csproj": {}
+    "D:\\Escritorio\\estructurasCSharp\\estructuras.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Dropbox\\Programacion\\CT\\estructuras\\estructuras.csproj": {
+    "D:\\Escritorio\\estructurasCSharp\\estructuras.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Dropbox\\Programacion\\CT\\estructuras\\estructuras.csproj",
+        "projectUniqueName": "D:\\Escritorio\\estructurasCSharp\\estructuras.csproj",
         "projectName": "estructuras",
-        "projectPath": "C:\\Users\\Usuario\\Dropbox\\Programacion\\CT\\estructuras\\estructuras.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Dropbox\\Programacion\\CT\\estructuras\\obj\\",
+        "projectPath": "D:\\Escritorio\\estructurasCSharp\\estructuras.csproj",
+        "packagesPath": "C:\\Users\\Nicolas-PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Escritorio\\estructurasCSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Nicolas-PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
@@ -55,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

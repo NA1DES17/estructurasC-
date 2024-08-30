@@ -55,85 +55,35 @@ class Program
       int dato = int.Parse(Console.ReadLine());
       Console.Write($"El dato {dato} se encuentra en el nivel {miArbol.nivel(dato)}");
     }
-    static void prubaArbolBinario()
+    static void pruebaArbolBinario()
     {
-      //Prueba Árbol Binario
-      //Raíz
-      ArbolBinario<int> miArbol = new ArbolBinario<int>(7);
-
-      ArbolBinario<int> hijo1 = new ArbolBinario<int>(10);
-      ArbolBinario<int> hijo2 = new ArbolBinario<int>(17);
-
-      ArbolBinario<int> hijo3 = new ArbolBinario<int>(3);
-      ArbolBinario<int> hijo4 = new ArbolBinario<int>(47);
-      ArbolBinario<int> hijo5 = new ArbolBinario<int>(5);
-      ArbolBinario<int> hijo6 = new ArbolBinario<int>(27);
-
-      //Agregar hijos de la raíz
+      // Crear el árbol original
+      ArbolBinario<int> miArbol = new ArbolBinario<int>(1);
+      ArbolBinario<int> hijo1 = new ArbolBinario<int>(2);
+      ArbolBinario<int> hijo2 = new ArbolBinario<int>(3);
       miArbol.agregarHijoIzquierdo(hijo1);
       miArbol.agregarHijoDerecho(hijo2);
-      //Agregar hijos del H. Izq
-      hijo1.agregarHijoIzquierdo(hijo3);
-      hijo1.agregarHijoDerecho(hijo4);
-      //Agregar hijos del H. Der
-      hijo2.agregarHijoIzquierdo(hijo5);
-      hijo2.agregarHijoDerecho(hijo6);
-      //Agregar hijos de H3
-      hijo3.agregarHijoIzquierdo(new ArbolBinario<int>(1));
-      hijo3.agregarHijoDerecho(new ArbolBinario<int>(2));
-      //Agregar hijos de H4
-      hijo4.agregarHijoIzquierdo(new ArbolBinario<int>(0));
-      hijo4.agregarHijoDerecho(new ArbolBinario<int>(8));
 
-      //Test de recorridos
-      Console.WriteLine("Recorrido preOrden: ");
-      miArbol.preorden();
-      Console.WriteLine("\nRecorrido inOrden: ");
-      miArbol.inorden();
-      Console.WriteLine("\nRecorrido postOrden: ");
-      miArbol.postorden();
-      Console.WriteLine("\nRecorrido Por niveles: ");
-      miArbol.recorridoPorNiveles();
-      Console.Write("\nCantidad de hojas: ");
-      Console.WriteLine(miArbol.contarHojas());
-      Console.WriteLine("Recorrido entre niveles: ");
-      miArbol.recorridoEntreNiveles(1, 3);
-      Console.Write("\n¿Que dato quiere saber si está? ");
-      int dato = int.Parse(Console.ReadLine());
-      Console.WriteLine($"\nEl árbol contiene el {dato}? {miArbol.incluye(dato)}");
+      ArbolBinario<int> hijo3 = new ArbolBinario<int>(4);
+      hijo1.agregarHijoIzquierdo(hijo3);
+      ArbolBinario<int> hijo4 = new ArbolBinario<int>(5);
+      ArbolBinario<int> hijo5 = new ArbolBinario<int>(6);
+      hijo2.agregarHijoIzquierdo(hijo4);
+      hijo2.agregarHijoDerecho(hijo5);
+
+      ArbolBinario<int> hijo6 = new ArbolBinario<int>(7);
+      hijo3.agregarHijoIzquierdo(hijo6);
+
+      // Crear un nuevo árbol basado en el árbol original
+      //ArbolBinario<int> nuevoArbol = miArbol.nuevo(miArbol);
+
+      // Mostrar el recorrido por niveles del nuevo árbol
+      //Console.WriteLine("Recorrido por niveles del nuevo árbol:");
+      //nuevoArbol.recorridoPorNiveles(); // Debería imprimir: 1 3 3 6 8 6 12
     }
+
     static void pruebaHeap()
     {
-      /*
-      //Prueba Heap
-      //Raíz
-      Heap<int> miHeap = new Heap<int>();
-      miHeap.agregar(50);
-      //Prueba de recorridos
-      System.Console.WriteLine("--------------------------------");
-      Console.WriteLine("Recorrido: ");
-      miHeap.recorrido();
-      miHeap.agregar(52);
-      //Prueba de recorridos
-      System.Console.WriteLine("--------------------------------");
-      Console.WriteLine("Recorrido: ");
-      miHeap.recorrido();
-      miHeap.agregar(41);
-      //Prueba de recorridos
-      System.Console.WriteLine("--------------------------------");
-      Console.WriteLine("Recorrido: ");
-      miHeap.recorrido();
-      miHeap.agregar(54);
-      //Prueba de recorridos
-      System.Console.WriteLine("--------------------------------");
-      Console.WriteLine("Recorrido: ");
-      miHeap.recorrido();
-      miHeap.eliminar();
-      //Prueba de recorridos
-      System.Console.WriteLine("--------------------------------");
-      Console.WriteLine("Recorrido: ");
-      miHeap.recorrido();
-      System.Console.WriteLine("\n");*/
 
       int[] arreglo = { 50, 52, 41, 54, 46 };
 
@@ -240,32 +190,10 @@ class Program
     }
     //pruebaArbolGeneral();
     //pruebaCola();
-    //pruebaArbolBinario();
+    pruebaArbolBinario();
     //pruebaHeap();
     //PracticaUno();
     //PracticaDos();
-
-    ArbolGeneral<int> miArbol = new ArbolGeneral<int>(1000);
-
-    //int uno = miArbol.getDatoRaiz() / miArbol.cantHijos();
-    
-    ArbolGeneral<int> hijo1 = new ArbolGeneral<int>(0);
-    ArbolGeneral<int> hijo2 = new ArbolGeneral<int>(0);
-    ArbolGeneral<int> hijo3 = new ArbolGeneral<int>(0);
-    ArbolGeneral<int> hijo4 = new ArbolGeneral<int>(0);
-
-    miArbol.agregarHijo(hijo1);
-    //miArbol.agregarHijo(hijo2);
-    //miArbol.agregarHijo(hijo3);
-    //miArbol.agregarHijo(hijo4);
-    System.Console.WriteLine(miArbol.cantHijos());
-    miArbol.agregarHijo(new ArbolGeneral<int>(miArbol.getDatoRaiz() / miArbol.cantHijos()));
-    miArbol.agregarHijo(new ArbolGeneral<int>(miArbol.getDatoRaiz() / miArbol.cantHijos()));
-    miArbol.agregarHijo(new ArbolGeneral<int>(miArbol.getDatoRaiz() / miArbol.cantHijos()));
-    miArbol.agregarHijo(new ArbolGeneral<int>(miArbol.getDatoRaiz() / miArbol.cantHijos()));
-
-    System.Console.WriteLine("--------------------------");
-    miArbol.porNivelesConSeparador();
 
   }
 
