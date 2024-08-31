@@ -57,31 +57,21 @@ class Program
     }
     static void pruebaArbolBinario()
     {
-      // Crear el árbol original
-      ArbolBinario<int> miArbol = new ArbolBinario<int>(1);
-      ArbolBinario<int> hijo1 = new ArbolBinario<int>(2);
-      ArbolBinario<int> hijo2 = new ArbolBinario<int>(3);
-      miArbol.agregarHijoIzquierdo(hijo1);
-      miArbol.agregarHijoDerecho(hijo2);
+      ArbolBinario<int> arbol = new ArbolBinario<int>(1);
+      arbol.agregarHijoIzquierdo(new ArbolBinario<int>(2));
+      arbol.getHijoIzquierdo().agregarHijoIzquierdo(new ArbolBinario<int>(4));
+      arbol.agregarHijoDerecho(new ArbolBinario<int>(3));
+      arbol.getHijoDerecho().agregarHijoIzquierdo(new ArbolBinario<int>(5));
+      arbol.getHijoDerecho().agregarHijoDerecho(new ArbolBinario<int>(6));
+      arbol.getHijoDerecho().getHijoIzquierdo().agregarHijoIzquierdo(new ArbolBinario<int>(7));
 
-      ArbolBinario<int> hijo3 = new ArbolBinario<int>(4);
-      hijo1.agregarHijoIzquierdo(hijo3);
-      ArbolBinario<int> hijo4 = new ArbolBinario<int>(5);
-      ArbolBinario<int> hijo5 = new ArbolBinario<int>(6);
-      hijo2.agregarHijoIzquierdo(hijo4);
-      hijo2.agregarHijoDerecho(hijo5);
+// Modificar el árbol original
+arbol.nuevo(arbol);
 
-      ArbolBinario<int> hijo6 = new ArbolBinario<int>(7);
-      hijo4.agregarHijoIzquierdo(hijo6);
+// Verificar el recorrido preorden después de la modificación
+arbol.preorden();
 
-      // Crear un nuevo árbol basado en el árbol original
-      //ArbolBinario<int> nuevoArbol = miArbol.nuevo(miArbol);
 
-      // Mostrar el recorrido por niveles del nuevo árbol
-      Console.WriteLine("\nRecorrido preorden del árbol original:");
-      miArbol.preorden();
-
-      
     }
 
     static void pruebaHeap()
