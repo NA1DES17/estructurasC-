@@ -192,39 +192,20 @@ public class ArbolBinario<T>
     return incluye(nodo.getHijoIzquierdo(), elemento) || incluye(nodo.getHijoDerecho(), elemento);
   }
   //----
-
-/*public ArbolBinario<int> nuevo(ArbolBinario<int> arbol){
-    //Creamos el nuevo árbol con el mismo valor de la raíz del árbol original
-    ArbolBinario<int> nuevoArbol = new ArbolBinario<int>(arbol.getDatoRaiz());
-
-    //Si el árbol original tiene un HI, crear un nuevo HI
-    if (arbol.getHijoIzquierdo() != null) {
-
-      ArbolBinario<int> nuevoHI = new ArbolBinario<int>(arbol.getDatoRaiz() + arbol.getHijoIzquierdo().getDatoRaiz());
-      nuevoArbol.agregarHijoIzquierdo(nuevoHI);
-    }
-    // El hijo derecho del nuevo árbol es una copia directa del hijo derecho del árbol original
-    if (arbol.getHijoDerecho() != null)
-    {
-      ArbolBinario<int> nuevoHD = nuevo(arbol.getHijoDerecho()); // Llamada recursiva
-      nuevoArbol.agregarHijoDerecho(nuevoHD);
-    }
-    return nuevoArbol;
-  }*/
   public void nuevo(ArbolBinario<int> arbol)
-{
+  {
     // Si el árbol está vacío, no hacemos nada
     if (arbol == null)
-        return;
+      return;
 
     // Primero, procesamos el subárbol izquierdo
     if (arbol.getHijoIzquierdo() != null)
     {
-        // Llamada recursiva para el subárbol izquierdo para asegurar que sus nodos se actualicen primero
-        nuevo(arbol.getHijoIzquierdo());
+      // Llamada recursiva para el subárbol izquierdo para asegurar que sus nodos se actualicen primero
+      nuevo(arbol.getHijoIzquierdo());
         
-        // Actualizamos el valor del nodo actual basado en el valor de su hijo izquierdo
-        arbol.getHijoIzquierdo().dato = arbol.getDatoRaiz() + arbol.getHijoIzquierdo().getDatoRaiz();
+      // Actualizamos el valor del nodo actual basado en el valor de su hijo izquierdo
+      arbol.getHijoIzquierdo().dato = arbol.getDatoRaiz() + arbol.getHijoIzquierdo().getDatoRaiz();
     }
 
     // Procesamos el hijo derecho
@@ -233,9 +214,5 @@ public class ArbolBinario<T>
         // Llamada recursiva para el subárbol derecho
         nuevo(arbol.getHijoDerecho());
     }
-}
-
-
-
-
+  }
 }

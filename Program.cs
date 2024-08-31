@@ -57,23 +57,22 @@ class Program
     }
     static void pruebaArbolBinario()
     {
+      //Raiz
       ArbolBinario<int> arbol = new ArbolBinario<int>(1);
-      arbol.agregarHijoIzquierdo(new ArbolBinario<int>(2));
-      arbol.getHijoIzquierdo().agregarHijoIzquierdo(new ArbolBinario<int>(4));
-      arbol.agregarHijoDerecho(new ArbolBinario<int>(3));
-      arbol.getHijoDerecho().agregarHijoIzquierdo(new ArbolBinario<int>(5));
-      arbol.getHijoDerecho().agregarHijoDerecho(new ArbolBinario<int>(6));
-      arbol.getHijoDerecho().getHijoIzquierdo().agregarHijoIzquierdo(new ArbolBinario<int>(7));
-
-// Modificar el árbol original
-arbol.nuevo(arbol);
-
-// Verificar el recorrido preorden después de la modificación
-arbol.preorden();
+      //Raíz
+      arbol.agregarHijoIzquierdo(new ArbolBinario<int>(2)); //Hijo izquierdo
+      arbol.getHijoIzquierdo().agregarHijoIzquierdo(new ArbolBinario<int>(4)); //Hijo izquierdo del 2
+      arbol.agregarHijoDerecho(new ArbolBinario<int>(3));// Hijo derecho
+      arbol.getHijoDerecho().agregarHijoIzquierdo(new ArbolBinario<int>(5)); //Hijo izquierdo del 3
+      arbol.getHijoDerecho().agregarHijoDerecho(new ArbolBinario<int>(6)); //Hijo derecho del 3
+      arbol.getHijoDerecho().getHijoIzquierdo().agregarHijoIzquierdo(new ArbolBinario<int>(7)); //Hijo derecho del 5
+      // Modificar el árbol original
+      arbol.nuevo(arbol);
+      // Verificar el recorrido preorden después de la modificación
+      arbol.preorden();  // Debería imprimir: 1 3 6 3 8 12 6
 
 
     }
-
     static void pruebaHeap()
     {
 
